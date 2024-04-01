@@ -14,11 +14,11 @@
 
 ## Ejercicio 1
 En el archivo **bounds.c** implementar la función:
-```sh
+```c
 struct bound_data check_bound(int value, int arr[], unsigned int length);
 ```
 que determina si por un lado el valor ***value*** es mayor o igual a todos los elementos del arreglo **arr** (que tiene ***length*** elementos), por otro lado si es menor o igual a todos los elementos del arreglo, también indica si ***value*** se encuentra en **arr** y en caso de encontrarse indica en qué posición se lo encontró. Toda esta información es devuelta en una estructura **struct** ***bound_data*** que tiene la siguiente definición:
-```sh
+```c
 struct bound_data {
 bool is_upperbound;
 bool is_lowerbound;
@@ -29,7 +29,7 @@ unsigned int where;
 Los cuatro campos de la estructura son los siguientes: valor de verdad que indica si el valor es mayor o igual a todos los elementos del arreglo (***is_upperbound***), valor de verdad que indica si el valor es menor o igual a todos los elementos (***is_lowerbound***), valor de verdad que indica si el elemento existe en el arreglo (***exists***) y posición donde se encontró el elemento (***where***).
 
 Por ejemplo,
-```sh
+```c
 int a[] = {0, -1, 9, 4};
 result = check_bound(9, a, 4);
 printf("%d", result.is_upperbound)   // Imprime 1
@@ -43,7 +43,7 @@ En la función **main()** se le debe solicitar al usuario que ingrese uno por un
 
 ## Ejercicio 2 
 En el archivo **tictactoe.c** se encuentra una implementación incompleta del clásico juego [tres en linea](https://es.wikipedia.org/wiki/Tres_en_l%C3%ADnea) (conocido como *tatetí* o *tictactoe*). El tablero *3x3* se representa con una matriz en C, declarada de la siguiente manera.
-```sh
+```c
 char board[3][3] = {
 { '-', '-', '-' },
 { '-', '-', '-' },
@@ -61,11 +61,11 @@ Inicialmente todas las “celdas” del tablero se encuentran vacías, lo que se
 ............................
 ```
 El juego está incompleto puesto que no detecta cuándo hubo un ganador, o si hubo empate. Para ello se deben implementar correctamente las funciones:
-```sh
+```c
 bool has_free_cell(char board[3][3])
 ```
 que devuelve verdadero si hay una celda libre (marcada con **'-'**) en el tablero **board**, y devuelve **false** en caso contrario;
-```sh
+```c
 char get_winner(char board[3][3])
 ```
 que devuelve el jugador ganador (**'X'** o **'O'**) si lo hubo, o **'-'** si todavía no hay ganador. Para ello se debe recorrer la matriz para verificar si alguna columna, fila o diagonal tiene 3 veces consecutivas el mismo carácter.
