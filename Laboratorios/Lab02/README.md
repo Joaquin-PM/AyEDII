@@ -109,4 +109,25 @@ en el sentidodel orden alfabético. No se permite usar librerías de C como **st
 implementadas pueden probarlas compilando junto con **main.c**.
 
 ## Ejercicio 1: Insertion Sort
+Dentro de la carpeta **ej1** se encuentran los siguientes archivos
+
+| Archivo             | Descripción |
+|---------------------|-------------|
+| **array_helpers.h** | Prototipos y descripciones de la funciones auxiliares para manipular arreglos.|
+| **array_helpers.c** | Implementaciones de las funciones de la librería array_helpers|
+| **sort_helpers.h**  | Prototipos y descripciones de las funciones ***goes_before()***, ***swap()*** y ***array_is_sorted()***|
+| **sort_helpers.o**  | Archivo binario con las Implementaciones las funciones declaradas en sort_helpers.h (código compilado para la arquitectura **x86-64**) |
+| **sort.h**          | Prototipo de la función ***insertion_sort()*** y su descripción |
+| **sort.c**          | Contiene una implementación incompleta de ***insertion_sort()***, falta implementar ***insert()*** |
+| **main.c**          | Programa principal que carga un *array* de números, luego lo ordena con la función ***insertion_sort()*** y finalmente comprueba que el arreglo sea permutación ordenada del que se cargó inicialmente |
+
+> [!WARNING]
+Si se trabaja en una computadora con arquitectura distinta a **x86-64**, entonces seleccionar y
+renombrar uno de los siguientes archivos, **sort_helpers.o_32** o **sort_helpers.o_macos** según la
+arquitectura de su máquina.
+
+#### Parte A: Ordenación por Inserción
+
+
+
 
