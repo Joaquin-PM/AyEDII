@@ -22,14 +22,14 @@ guardado dentro de él. El arreglo (o *array*) se representa con su tamaño (*si
 enumera cada uno de los elementos, separándolos con espacios. Por ejemplo, un *array*
 cuyos elementos son **[1,2,3,4,5]** es representado en el archivo como:
 
-~~~sh
+~~~
 5
 1 2 3 4 5
 ~~~
 
 El archivo principal es **main.c**, donde se va a programar el ejercicio. Para compilarlo:
 
-~~~sh
+~~~
 $ gcc -Wall -Werror -Wextra -pedantic -std=c99 -o reader main.c
 ~~~
 
@@ -39,7 +39,7 @@ programa principal sea capaz de leer *arrays* de cualquiera de los archivos dent
 directorio **input** y que luego imprima por pantalla su contenido. Entonces por ejemplo al
 ejecutar el programa:
 
-~~~sh
+~~~
 $ ./reader ../input/example-easy.in
 ~~~
 
@@ -47,18 +47,18 @@ se le está indicando al programa **reader** que lea el archivo **example-easy.i
 encontrarlo debe primero subir un nivel (eso indica el **..** que se incluye en la ruta o path) y 
 luego entrar en el directorio **input**. Al ejecutar se debe obtener la siguiente salida por pantalla:
 
-~~~sh
+~~~
 [ 1, 2, 3, 4, 5]
 ~~~
 
-Para ello se deben completar las definiciones de las funciones *array_from_file()* y la
-*función array_dump()*.
+Para ello se deben completar las definiciones de las funciones ***array_from_file()*** y la
+***función array_dump()***.
 
 Se sugiere no esperar hasta el final para compilar, se puede ir compilando a medida que se
 completan las funcionalidades del programa.
 
 > [!TIP]
-Pueden ser de utilidad las funciones *fopen()*, *fscanf()*, *fclose()*... se pueden
+Pueden ser de utilidad las funciones ***fopen()***, ***fscanf()***, ***fclose()***... se pueden
 consultar las páginas del manual de referencia de linux, por ejemplo:
 >
 > $ man fopen
@@ -67,9 +67,9 @@ consultar las páginas del manual de referencia de linux, por ejemplo:
 Modificar **main.c** (no borrar el original!) para que el programa en lugar de leer un archivo
 de la carpeta **input**, lea el tamaño y cada uno de los miembros del *array* por teclado y
 luego los muestre por la pantalla. Se puede (y se sugiere fuertemente) reutilizar la función
-*array_from_file()* la cual puede pasar a llamarse *array_from_stdin()* donde el
+***array_from_file()*** la cual puede pasar a llamarse ***array_from_stdin()*** donde el
 parámetro *filepath* ya no será necesario. Además tampoco serán necesarios los
-parámetros de la función *main()* puesto que el programa se ejecuta sin especificar
+parámetros de la función ***main()*** puesto que el programa se ejecuta sin especificar
 ningún archivo de entrada.
 
 > [!TIP]
@@ -83,8 +83,8 @@ para enviar la señal de EOF (end of file) a la entrada estándar.
 En este ejercicio se va a modularizar el programa del ejercicio 1. Primero se debe copiar el
 archivo **main.c** del ejercicio 1 al directorio **ej3** y luego completar los archivos:
 - **array_helpers.h**: Se deben escribir aquí los prototipos de las funciones
-  - *array_from_file()*
-  - *array_dump()*
+  - ***array_from_file()***
+  - ***array_dump()***
 - **array_helpers.c**: Se deben colocar las definiciones de las funciones declaradas
   en **array_helpers.h** e incluir los prototipos al comienzo del archivo usando la
   directiva del preprocesador: **#include "array_helpers.h"**. Además deben
@@ -95,15 +95,15 @@ archivo **main.c** del ejercicio 1 al directorio **ej3** y luego completar los a
 En **main.c** también se debe incluir la librería **array_helpers.h** y borrar las funciones
 definidas en **array_helpers.c**. El programa se compila realizando los siguientes pasos:
 
-~~~sh
+~~~
 gcc -Wall -Werror -Wextra -pedantic -std=c99 -c array_helpers.c
 ~~~
 
-~~~sh
+~~~
 gcc -Wall -Werror -Wextra -pedantic -std=c99 -c main.c
 ~~~
 
-~~~sh
+~~~
 gcc -Wall -Werror -Wextra -pedantic -std=c99 array_helpers.o main.o -o reader
 ~~~
 
@@ -129,7 +129,7 @@ Como se utiliza el tipo *bool*, el cual no es nativo del lenguaje C, no olvidar 
 que además de mostrar el contenido del array del archivo especificado, también informe si
 está ordenado o no. Un ejemplo sería:
 
-~~~sh
+~~~
 ./reader ../input/example-easy.in
 [1, 2, 3, 4, 5]
 El arreglo está ordenado
@@ -137,7 +137,7 @@ El arreglo está ordenado
 
 Otro ejemplo:
 
-~~~sh
+~~~
 ./reader ../input/example-unsorted.in
 [2, -1, 3, 8, 0]
 El arreglo no está ordenado
@@ -175,7 +175,7 @@ debe modificar **main.c**, **array_helpers.h** y **array_helpers.c** reemplazand
 
 Una vez realizados los reemplazos, compilar el programa de la siguiente manera:
 
-~~~sh
+~~~
 gcc -Wall -Werror -Wextra -pedantic -std=c99 -c array_helpers.c
 gcc -Wall -Werror -Wextra -pedantic -std=c99 -c main.c
 ~~~
@@ -209,7 +209,7 @@ algoritmo que utilice sucesivas llamadas a ***array_swap()*** para ir intercambi
 elementos del array hasta lograr invertirlo. El programa resultante debería comportarse de la
 siguiente manera:
 
-~~~sh
+~~~
 ./reader ../input/example-easy.in
 [5, 4, 3, 2, 1]
 El arreglo no está ordenado
@@ -217,7 +217,7 @@ El arreglo no está ordenado
 
 otro ejemplo:
 
-~~~sh
+~~~
 ./reader ../input/example-unsorted.in
 [0, 8, 3, -1, 2]
 El arreglo no está ordenado
@@ -225,7 +225,7 @@ El arreglo no está ordenado
 
 ultimo ejemplo:
 
-~~~sh
+~~~
 ./reader ../input/sorted-desc-10.in
 [-63523, -62597, -62255, -59402, -58886, -52992, -52532, -51667, -45131, -44047]
 El arreglo está ordenado
