@@ -177,6 +177,9 @@ Una vez realizados los reemplazos, compilar el programa de la siguiente manera:
 
 ~~~
 gcc -Wall -Werror -Wextra -pedantic -std=c99 -c array_helpers.c
+~~~
+
+~~~
 gcc -Wall -Werror -Wextra -pedantic -std=c99 -c main.c
 ~~~
 
