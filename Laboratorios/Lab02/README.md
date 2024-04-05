@@ -127,6 +127,56 @@ renombrar uno de los siguientes archivos, **sort_helpers.o_32** o **sort_helpers
 arquitectura de su máquina.
 
 #### Parte A: Ordenación por Inserción
+Se debe realizar una implementación del algoritmo de ordenación por inserción (alias *insertion-sort*). Para
+ello es necesario completar la implementación del “procedimiento” ***insert()*** en el módulo **sort.c**. 
+Como guía puede examinar el resto del archivo **sort.c** y la definición del algoritmo de ordenación por
+inserción vista en el teórico. El algoritmo debe ordenar con respecto a la relación ***goes_before()*** 
+declarada en **sort_helpers.h** cuya implementación está oculta puesto que viene ya compilada 
+en **sort_helpers.o**.
+
+#### Parte B: Chequeo de invariante
+Se debe modificar el “procedimiento” ***insertion_sort()*** agregando la verificación de cumplimiento de la
+invariante del ciclo *for* que se vio en el teórico. Por simplicidad sólo se debe verificar la siguiente
+parte de la invariante:
+
+- el segmento inicial **a[0,i)** del arreglo está ordenado.
+
+Para ello usar las funciones ***assert()*** y ***array_is_sorted()***.
+
+Una vez implementados los incisos *a)* y *b)*, se puede compilar ejecutando:
+~~~
+gcc -Wall -Werror -Wextra -pedantic -std=c99 -c array_helpers.c sort.c main.c
+~~~
+~~~
+gcc -Wall -Werror -Wextra -pedantic -std=c99 -no-pie array_helpers.o sort.o sort_helpers.o main.o -o sorter
+~~~
+la opción **-no-pie** tiene que ver con que se están “linkeando” los objetos **array_helpers.o**, **sort.o** y
+**main.o** compilados en nuestra computadora con el objeto precompilado **sort_helpers.o**, cuya compilación fue
+realizada en una computadora distinta. En consecuencia esta opción puede ser necesaria para lograr
+compatibilidad entre los archivos binarios durante el “linkeo” y así poder generar el ejecutable. El programa
+puede ejecutarse de la siguiente manera:
+~~~
+./sorter ../input/example-unsorted.in
+~~~
+Si el programa funciona bien en ese ejemplo(es decir, si no reporta error), probar con otros archivos de la
+carpeta **../input**, sin olvidar realizar una prueba con el archivo **../input/empty.in**.
+
+Analizar los resultados del programa y responder: ¿Qué relación implementa la función
+**goes_before()**?¿Cuál es el criterio que usa?
+
+## Ejercicio 2: Quick sort I
+En este ejercicio se realizará una implementación top-down del algoritmo de ordenación rápida vista en el
+teórico. En la carpeta **ej2** se encuentran los siguientes archivos:
+
+| Archivo             | Descripción |
+|---------------------|-------------|
+| **array_helpers.h** | Es el mismo que en el ejercicio anterior|
+| **array_helpers.c** | Es el mismo que en el ejercicio anterior|
+| **sort_helpers.h**  | Contiene además la declaración y descripción de **partition()**|
+| **sort_helpers.o**  | Contiene implementaciones ilegibles de esas funciones (código compilado para la arquitectura **x86-64**) |
+| **sort.h**          | Contiene descripción de la función **quick_sort()**|
+| **sort.c**          | Contiene una implementación muy incompleta de **quick_sort()**, además falta implementar **quick_sort_rec()**|
+| **main.c**          | Programa principal que carga un *array* de números, luego lo ordena con la función **insertion_sort()** y finalmente comprueba que el arreglo sea permutación ordenada del que se cargó inicialmente |
 
 
 
