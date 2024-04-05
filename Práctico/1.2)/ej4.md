@@ -1,6 +1,6 @@
 # Ejercicio 4)
 ~~~
-proc partition_alt(in/out a: array[1..n] of T, in lft, rgt: nat, out ppiv: nat)
+proc partition_Alt(in/out a: array[1..n] of T, in lft, rgt: nat, out ppiv: nat)
     var i, j, mid: nat
     ppiv := lft
     mid := (lft + rgt)/2
