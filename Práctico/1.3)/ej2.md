@@ -26,6 +26,30 @@ fun cima_donde(a: array[1..n] of T) ret k: nat
 end proc
 ~~~
 
+###### c)
+~~~
+fun cima_dondeBin(a: array[1..n] of T) ret k: nat
+    k := cima_dondeBin_rec(a,1,n)
+end fun
+~~~
+~~~
+fun cima_dondeBin_rec(a: array[1..n] of T, izq,der: nat) ret k: nat
+    var mid: nat
+    var b: bool
+    mid := (izq+der)/2
+    if (mid = i | a[mid] > a[mid-1]) & (mid = n | a[mid] < a[mid+1]) then
+        k := mid
+    if a[mid-1] < a[mid] < a[mid+1] then
+        k := cima_dondeBin_rec(a,mid+1,der)
+    if a[mid-1] > a[mid] > a[mid+1] then
+        k := cima_dondeBin_rec(a,lft,mid-1)
+    fi
+end fun
+~~~
+
+###### d)
+
+
 
         
         
