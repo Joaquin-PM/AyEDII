@@ -40,5 +40,26 @@ Tal vez se pueda considerar el paso de parámetros por punteros como una forma d
 
 El valor de &p seria la dirección de memoria donde esta alojado la variable p de tipo puntero.
 
+## Ejercicio4c)
+
+### ¿La suma de los miembros coincide con el total? ¿El tamaño del campo name depende del nombre que contiene?
+La suma no coincide con el total, el tamaño del campo name no depende del nombre sino del TIPO que en este caso es un char[30].
+
+### ¿Hay algo raro en las direcciones de memoria?
+Si, el campo name esta en la misma dirección de memoria que el la estructura data_t, a diferencia de los otros campos que estan en direcciones distintas.
+
+## Ejercicio5b)
+### ¿El diseño del TAD logra encapsulamiento? ¿Por qué sí? ¿Por qué no?
+No lo logra, ya que hay una funcion para manejar el TAD que esta implementada en el archivo principal main.c, por lo tanto se puede ver como esta implementado el TAD ademas en la especificación se puede ver como es la estructura del nuevo TAD todo esto hace que no sea "abstracto".
+
+## Ejercicio5d)
+### ¿Laimplementación logra encapsulamiento?
+Ahora SI logra el encapsulamiento, viendo el archivo main.c y la especificación pair.h no puedo saber nada de como esta implementado ese TAD.
+
+## Ejercicio 5e)
+### ¿Qué diferencia hay entre la especificación anterior y la que se encuentra en el pair.h de la carpeta pair_d-pointer?
+No hay muchisima diferencia, solo se renombro al tipo int como elem, la ventaja podria ser que ahora es mas facil cambiar el tipo concreto que maneja el TAD, solo cambiando el tipo al cual llamamos elem.
+
+
 
 
