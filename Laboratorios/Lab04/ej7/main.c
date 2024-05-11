@@ -33,17 +33,28 @@ char *parse_filepath(int argc, char *argv[]) {
 
 
 float average(list l) {
-/*
-    Needs implementation.
-*/
+    
+    list laux = copy_list(l);
+    float avr = 0.0;
+    
+    while (!is_empty_list(laux))
+    {   
+        avr += head_list(laux);
+        laux = tail_list(laux);
+    }
+
+    avr = avr / length_list(l);
+    return (avr);
 }
 
 list array_to_list(int array[], unsigned int length) {
-    /* Initialize the list */
-    for (unsigned int i = 0u; i < length; ++i) {
-        /* Add element to the list  */
+
+    list l = empty_list();
+    for (unsigned int i = 0u; i < length; ++i) 
+    {
+        l = addl_list(l, array[i]);    
     }
-    /* Return list */
+    return(l);
 }
 
 int main(int argc, char *argv[]) {
@@ -66,6 +77,8 @@ int main(int argc, char *argv[]) {
 
     /* call the average function */
     printf("The average is: %.2f \n", average(l));
+
+    destroy_list(l);
 
     return (EXIT_SUCCESS);
 }
