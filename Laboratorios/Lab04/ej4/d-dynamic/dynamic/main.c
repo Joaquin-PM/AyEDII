@@ -50,14 +50,12 @@ int main(int argc, char *argv[]) {
     
     size_t length=0;
     // parse the file and returns the array storing the actual size in <length>
-    int *array=array_from_file(filepath, &length);
+    int *array = array_from_file(filepath, &length);
     
     /*dumping the array*/
     array_dump(array, length);
     
-    // 
-    // COMPLETAR: Liberar la memoria usada por <array>
-    //
+    free(array);
     
     return EXIT_SUCCESS;
 }

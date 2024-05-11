@@ -11,6 +11,4 @@ typedef struct _s_data {
     unsigned int height;
 } data_t;
 
-
 #endif
-

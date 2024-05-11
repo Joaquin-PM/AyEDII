@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 #include "data.h"
 
 void
@@ -11,16 +10,24 @@ print_data(data_t d) {
            d.name, d.age, d.height);
 }
 
-void set_name(name_t new_name, data_t *d) {
-    /* COMPLETAR */
+void 
+set_name(name_t new_name, data_t *d) {
+    
+    int i = 0;
+    while (i < NAME_MAXSIZE && new_name[i] != '\0') {
+        d->name[i] = new_name[i];
+        i++;    
+    }
+    d->name[i] = '\0';
 }
 
-int main(void) {
+int 
+main(void) {
 
     data_t messi = {"Leo Messi", 36, 169};
     print_data(messi);
     name_t messi_full_name = "Lionel Messi";
-    /* COMPLETAR */
+    set_name(messi_full_name, &messi);
     print_data(messi);
 
     return EXIT_SUCCESS;

@@ -3,9 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-
 void array_dump(int a[], unsigned int length) {
+    
     fprintf(stdout, "length: %u\n", length);
     fprintf(stdout, "[ ");
     for (unsigned int i = 0u; i < length; ++i) {
@@ -19,6 +18,7 @@ void array_dump(int a[], unsigned int length) {
 
 
 unsigned int array_from_file(int array[], unsigned int max_size, const char *filepath) {
+
     FILE *file = NULL;
     file = fopen(filepath, "r");
     if (file == NULL) {
